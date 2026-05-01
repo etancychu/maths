@@ -25,3 +25,14 @@
 body {
   font-family: "Computer Modern", sans-serif;
 }
+
+.indent {
+  padding-left: 90px;
+  text-indent: -90px;
+  line-height: 1.4;
+}
+
+.sub {
+  display: block;
+  margin-left: 40px;
+}
