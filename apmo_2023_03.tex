@@ -1,0 +1,294 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{titlesec}
+
+\graphicspath{{C:/Users/user/OneDrive/Desktop/Setup/LaTeX/}}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccoth}{arccoth}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\title{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Trigonometric identities}
+
+\subsection{Pythagorean identities}
+\begin{align}
+\sin^2(x)+\cos^2(x)=1\\
+1+\tan^2(x)=\sec^2(x)\\
+1+\cot^2(x)=\csc^2(x)
+\end{align}
+
+\subsection{Angle sum and difference identities}
+\begin{align}
+\sin(x\pm y)&=\sin(x)\cos(y)\pm\cos(x)\sin(y)\\
+\cos(x\pm y)&=\cos(x)\cos(y)\mp\sin(x)\sin(y)\\
+\tan(x\pm y)&=\frac{\tan(x)\pm\tan(y)}{1\mp\tan(x)\tan(y)}\\
+\csc(x\pm y)&=\frac{\sec(x)\sec(y)\csc(x)\csc(y)}{\sec(x)\csc(y)\pm\csc(x)\sec(y)}\\
+\sec(x\pm y)&=\frac{\sec(x)\sec(y)\csc(x)\csc(y)}{\csc(x)\csc(y)\mp\sec(x)\sec(y)}\\
+\cot(x\pm y)&=\frac{\cot(x)\cot(y)\mp1}{\cot(y)\pm\cot(x)}\\
+\arcsin(x)\pm\arcsin(y)&=\arcsin\left(x\sqrt{1-y^2}\pm y\sqrt{1-x^2}\right)\\
+\arccos(x)\pm\arccos(y)&=\arccos\left(xy\mp\sqrt{\left(1-x^2\right)\left(1-y^2\right)}\right)\\
+\arctan(x)\pm\arctan(y)&=\arctan\left(\frac{x\pm y}{1\mp xy}\right)\\
+\arccot(x)\pm\arccot(y)&=\arccot\left(\frac{xy\mp 1}{y\pm x}\right)
+\end{align}
+
+\subsection{Double-angle formulae}
+\begin{align}
+\sin(2x)&=2\sin(x)\cos(x)\\
+\cos(2x)&=2\cos^2(x)-1\\
+\tan(2x)&=\frac{2\tan(x)}{1-\tan^2(x)}\\
+\csc(2x)&=\frac{\sec(x)\csc(x)}{2}\\
+\sec(2x)&=\frac{\sec^2(x)}{2-\sec^2(x)}\\
+\cot(2x)&=\frac{\cot^2(x)-1}{2\cot(x)}
+\end{align}
+
+\subsection{Triple-angle formulae}
+\begin{align}
+\sin(3x)&=3\sin(x)-4\sin^3(x)\\
+\cos(3x)&=4\cos^3(x)-3\cos(x)\\
+\tan(3x)&=\frac{3\tan(x)-\tan^3(x)}{1-3\tan^2(x)}\\
+\csc(3x)&=\frac{\csc^3(x)}{3\csc^2(x)-4}\\
+\sec(3x)&=\frac{\sec^3(x)}{4-3\sec^2(x)}\\
+\cot(3x)&=\frac{3\cot(x)-\cot^3(x)}{1-3\tan^2(x)}
+\end{align}
+
+\subsection{Multiple-angle formulae}
+\begin{align}
+\sin(nx)&=\sum_{k\ \mathrm{odd}}{(-1)^{\frac{k-1}{2}}\binom{n}{k}\cos^{n-k}(x)\sin^k(x)}\\
+\cos(nx)&=\sum_{k\ \mathrm{even}}{(-1)^{\frac{k}{2}}\binom{n}{k}\cos^{n-k}(x)\sin^k(x)}
+\end{align}
+
+\subsection{Half-angle formulae}
+\begin{align}
+\sin\left(\frac{x}{2}\right)&=
+\begin{dcases}
+\sqrt{\dfrac{1-\cos(x)}{2}}&\mathrm{for\ }\sin\left(\frac{x}{2}\right)\geq0\\
+-\sqrt{\dfrac{1-\cos(x)}{2}}&\mathrm{for\ }\sin\left(\frac{x}{2}\right)<0\\
+\end{dcases}
+\\
+\cos\left(\frac{x}{2}\right)&=
+\begin{dcases}
+\sqrt{\dfrac{1+\cos(x)}{2}}&\mathrm{for\ }\cos\left(\frac{x}{2}\right)\geq0\\
+-\sqrt{\dfrac{1+\cos(x)}{2}}&\mathrm{for\ }\cos\left(\frac{x}{2}\right)<0\\
+\end{dcases}
+\\
+\tan\left(\frac{x}{2}\right)&=\csc(x)-\cot(x)\\
+\end{align}
+
+\subsection{Power-reduction formulae}
+\begin{align}
+\sin^2(x)&=\frac{1}{2}(1-\cos(2x))\\
+\sin^3(x)&=\frac{1}{4}(3\sin(x)-\sin(3x))\\
+\cos^2(x)&=\frac{1}{2}(1+\cos(2x))\\
+\cos^3(x)&=\frac{1}{4}(3\cos(x)+\cos(3x))\\
+\sin^n(x)&=
+\begin{dcases}
+2^{1-n}\sum_{k=0}^{\frac{n-1}{2}}(-1)^{\frac{1}{2}(n-2k-1)}\binom{n}{k}\sin((n-2k)x)&\mathrm{for\ odd\ }n\\
+2^{-n}\binom{n}{\frac{n}{2}}+2^{1-n}\sum_{k=0}^{\frac{n}{2}-1}(-1)^{\frac{1}{2}(n-2k)}\binom{n}{k}\cos((n-2k)x)&\mathrm{for\ even\ }n
+\end{dcases}
+\\
+\cos^n(x)&=
+\begin{dcases}
+2^{1-n}\sum_{k=0}^{\frac{n-1}{2}}\binom{n}{k}\cos((n-2k)x)&\mathrm{for\ odd\ }n\\
+2^{-n}\binom{n}{\frac{n}{2}}+2^{1-n}\sum_{k=0}^{\frac{n}{2}-1}\binom{n}{k}\cos((n-2k)x)&\mathrm{for\ even\ }n
+\end{dcases}
+\end{align}
+
+\subsection{Product-to-sum identities}
+\begin{align}
+\sin(x)\sin(y)&=\frac{1}{2}(\cos(x-y)-\cos(x+y))\\
+\cos(x)\cos(y)&=\frac{1}{2}(\cos(x-y)+\cos(x+y))\\
+\sin(x)\cos(y)&=\frac{1}{2}(\sin(x+y)+\sin(x-y))\\
+\tan(x)\tan(y)&=\frac{\cos(x-y)-\cos(x+y)}{\cos(x-y)+\cos(x+y)}\\
+\cot(x)\cot(y)&=\frac{\cos(x-y)+\cos(x+y)}{\cos(x-y)-\cos(x+y)}\\
+\tan(x)\cot(y)&=\frac{\sin(x+y)+\sin(x-y)}{\sin(x+y)-\sin(x-y)}
+\end{align}
+
+\subsection{Sum-to-product identities}
+\begin{align}
+\sin(x)\pm\sin(y)&=2\sin\left(\frac{x\pm y}{2}\right)\cos\left(\frac{x\mp y}{2}\right)\\
+\cos(x)+\cos(y)&=2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
+\cos(x)-\cos(y)&=-2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
+\tan(x)\pm\tan(y)&=\sin(x\pm y)\sec(x)\sec(y)
+\end{align}
+
+\subsection{Complex exponential definitions}
+For all $x\in\mathbb{R}$,
+\begin{align}
+e^{ix}&=\cos(x)+i\sin(x)\\
+\sin(x)&=\frac{e^{ix}-e^{-ix}}{2i}\\
+\cos(x)&=\frac{e^{ix}+e^{-ix}}{2}\\
+\tan(x)&=-i\frac{e^{ix}-e^{-ix}}{e^{ix}+e^{-ix}}\\
+\csc(x)&=\frac{2i}{e^{ix}-e^{-ix}}\\
+\sec(x)&=\frac{2}{e^{ix}+e^{-ix}}\\
+\cot(x)&=i\frac{e^{ix}+e^{-ix}}{e^{ix}-e^{-ix}}\\
+\arcsin(x)&=-i\ln\left(ix+\sqrt{1-x^2}\right)\\
+\arccos(x)&=-i\ln\left(x+\sqrt{x^2-1}\right)\\
+\arctan(x)&=\frac{i}{2}\ln\left(\frac{i+x}{i-x}\right)\\
+\arccsc(x)&=-i\ln\left(\frac{i}{x}+\sqrt{1-\frac{1}{x^2}}\right)\\
+\arcsec(x)&=-i\ln\left(\frac{1}{x}+i\sqrt{1-\frac{1}{x^2}}\right)\\
+\arccot(x)&=\frac{i}{2}\ln\left(\frac{x-i}{x+i}\right)
+\end{align}
+
+\subsection{Compositions of trigonometric functions and their inverses}
+\begin{align}
+\sin(\arcsin(x))&=x,&|x|\leq1\\
+\sin(\arccos(x))&=\sqrt{1-x^2},&|x|\leq1\\
+\sin(\arctan(x))&=\frac{x}{\sqrt{1+x^2}}\\
+\sin(\arccsc(x))&=\frac{1}{x},&|x|\geq1\\
+\sin(\arcsec(x))&=\frac{\sqrt{x^2-1}}{x},&|x|\geq1\\
+\sin(\arccot(x))&=\frac{1}{\sqrt{1+x^2}}\\
+\cos(\arcsin(x))&=\sqrt{1-x^2},&|x|\leq1\\
+\cos(\arccos(x))&=x,&|x|\leq1\\
+\cos(\arctan(x))&=\frac{1}{\sqrt{1+x^2}}\\
+\cos(\arccsc(x))&=\frac{\sqrt{x^2-1}}{x},&|x|\geq1\\
+\cos(\arcsec(x))&=\frac{1}{x},&|x|\geq1\\
+\cos(\arccot(x))&=\frac{x}{\sqrt{1+x^2}}\\
+\tan(\arcsin(x))&=\frac{x}{\sqrt{1-x^2}},&|x|\leq1\\
+\tan(\arccos(x))&=\frac{\sqrt{1-x^2}}{x},&|x|\leq1\\
+\tan(\arctan(x))&=x\\
+\tan(\arccsc(x))&=\frac{1}{\sqrt{x^2-1}},&|x|\geq1\\
+\tan(\arcsec(x))&=\sqrt{x^2-1},&|x|\geq1\\
+\tan(\arccot(x))&=\frac{1}{x}
+\end{align}
+
+\subsection{Infinite product formulae}
+\begin{align}
+\sin(x)&=x\prod_{n=1}^{\infty}\left(1-\frac{x^2}{\pi^2n^2}\right)\\
+\cos(x)&=\prod_{n=1}^{\infty}\left(1-\frac{x^2}{\pi^2\left(n-\frac{1}{2}\right)^2}\right)
+\end{align}
+
+\section{Differentiable calculus}
+
+\subsection{Limit definition of derivative}
+\begin{equation}
+\frac{d}{dx}f(x)=\lim_{h\rightarrow0}\frac{f(x+h)-f(x)}{h}
+\end{equation}
+
+\subsection{First fundemental theorem of calculus}
+Let $f$ be a continous real-valued function defined over $[a,b]$.\\
+Let $F$ be a function defined over $[a,b]$ by $F(x)=\int_a^xf(t)dt$. Then
+\begin{equation}
+F'(x)=f(x)
+\end{equation}
+
+\subsection{Differentiation rules}
+\begin{align}
+\frac{d}{dx}f(g(x))&=f'(g(x))g'(x)\\
+\frac{d}{dx}(f(x)+g(x))&=f'(x)+g'(x)\\
+\frac{d}{dx}cf(x)&=cf'(x)\\
+\frac{d}{dx}f(x)g(x)&=f'(x)g(x)+f(x)g'(x)\\
+\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)&=\frac{f'(x)g(x)-f(x)g'(x)}{g(x)^2}\\
+\frac{d}{dx}f^{-1}(x)&=\frac{1}{f'(x)f^{-1}(x)}
+\end{align}
+
+\subsection{Trigonometric derivatives}
+\begin{align}
+\frac{d}{dx}\sin(x)&=\cos(x)\\
+\frac{d}{dx}\cos(x)&=-\sin(x)\\
+\frac{d}{dx}\tan(x)&=\sec^2(x)\\
+\frac{d}{dx}\csc(x)&=-\csc(x)\cot(x)\\
+\frac{d}{dx}\sec(x)&=\sec(x)\tan(x)\\
+\frac{d}{dx}\cot(x)&=-\csc^2(x)\\
+\frac{d}{dx}\sinh(x)&=\cosh(x)\\
+\frac{d}{dx}\cosh(x)&=\sinh(x)\\
+\frac{d}{dx}\tanh(x)&=\sech^2(x)\\
+\frac{d}{dx}\csch(x)&=-\csch(x)\coth(x)\\
+\frac{d}{dx}\sech(x)&=-\sech(x)\tanh(x)\\
+\frac{d}{dx}\coth(x)&=-\csch^2(x)\\
+\end{align}
+\begin{align}
+\frac{d}{dx}\arcsin(x)&=\frac{1}{\sqrt{1-x^2}}\\
+\frac{d}{dx}\arccos(x)&=-\frac{1}{\sqrt{1-x^2}}\\
+\frac{d}{dx}\arctan(x)&=\frac{1}{1+x^2}\\
+\frac{d}{dx}\arccsc(x)&=-\frac{1}{|x|\sqrt{x^2-1}}\\
+\frac{d}{dx}\arcsec(x)&=\frac{1}{|x|\sqrt{x^2-1}}\\
+\frac{d}{dx}\arccot(x)&=-\frac{1}{1+x^2}\\
+\frac{d}{dx}\arcsinh(x)&=\frac{1}{\sqrt{1+x^2}}\\
+\frac{d}{dx}\arccosh(x)&=\frac{1}{\sqrt{x^2-1}}\\
+\frac{d}{dx}\arctanh(x)&=\frac{1}{1-x^2}\\
+\frac{d}{dx}\arccsch(x)&=-\frac{1}{|x|\sqrt{1+x^2}}\\
+\frac{d}{dx}\arcsech(x)&=-\frac{1}{x\sqrt{1-x^2}}\\
+\frac{d}{dx}\arccoth(x)&=\frac{1}{1-x^2}\\
+\end{align}
+
+\subsection{Other derivatives}
+\begin{align}
+\frac{d}{dx}x^r&=rx^{r-1}\\
+\frac{d}{dx}e^x&=e^x\\
+\frac{d}{dx}\ln(x)&=\frac{1}{x},\qquad{}x>0\\
+\frac{d}{dx}W(x)&=\frac{1}{x+e^{W(x)}},\qquad{}x>-\frac{1}{e}\\
+\frac{d}{dx}x^x&=x^x(1+\ln(x))\\
+\frac{d}{dx}\Gamma(x)&=\Gamma(x)\psi(x)
+\end{align}
+
+\section{Integral calculus}
+
+\subsection{Second fundemental theorem of calculus}
+Let $f$ be a real-valued, Riemann integrable function defined over $[a,b]$.\\
+Let $F$ be a function defined over $[a,b]$ by the antiderivative of $f$ in $(a,b)$. Then
+\begin{equation}
+\int_a^bf(x)dx=F(b)-F(a)
+\end{equation}
+
+\subsection{Integration rules}
+\begin{align}
+\int_a^bf(g(x))g'(x)dx&=\int_{g(a)}^{g(b)}f(u)du\\
+\int_a^bf(x)g'(x)dx&=f(x)g(x)-\int_a^bf'(x)g(x)dx
+\end{align}
+
+\subsection{Integrals of rational functions}
+\begin{align}
+\int\frac{1}{x^2(ax+b)}dx&=-\frac{1}{bx}+\frac{a}{b^2}\ln\left|\frac{ax+b}{x}\right|+C\\
+\int\frac{1}{x^2(ax+b)^2}dx&=-a\left(\frac{1}{b^2(ax+b)}+\frac{1}{ab^2x}-\frac{2}{b^3}\ln\left|\frac{ax+b}{x}\right|\right)+C\\
+\int\frac{1}{x(ax+b)}dx&=-\frac{1}{b}\ln\left|\frac{ax+b}{x}\right|+C\\
+\int(ax+b)^ndx&=
+\begin{dcases}
+\frac{1}{a}\ln|ax+b|+C&\mathrm{for\ }n=-1\\
+\frac{(ax+b)^{n+1}}{a(n+1)}+C&\mathrm{otherwise}
+\end{dcases}
+\\
+\int\frac{x}{(ax+b)^n}dx&=
+\begin{dcases}
+\frac{x}{a}-\frac{b}{a^2}\ln|ax+b|+C&\mathrm{for\ }n=1\\
+\frac{b}{a^2(ax+b)}+\frac{1}{a^2}\ln|ax+b|+C&\mathrm{for\ }n=2\\
+\frac{a(1-n)x-b}{a^2(n+1)(n+2)(ax+b)^{n+1}}+C&\mathrm{otherwise}
+\end{dcases}
+\end{align}
+\begin{align}
+\int\frac{x^2}{(an+b)^n}dx&=
+\begin{dcases}
+\frac{b^2\ln|ax+b|}{a^3}+\frac{ax^2-2bx}{2a^2}+C&\mathrm{for\ }n=1\\
+\frac{1}{a^3}\left(ax-2b\ln|ax+b|-\frac{b^2}{ax+b}\right)+C&\mathrm{for\ }n=2\\
+\frac{1}{a^3}\left(\ln|ax+b|+\frac{2b}{ax+b}-\frac{b^2}{2(ax+b)^2}\right)+C&\mathrm{for\ }n=3\\
+\frac{1}{a^3}\left(-\frac{(ax+b)^{3-n}}{n-3}+\frac{2b(ax+b)^{2-n}}{n-2}-\frac{b^2(ax+b)^{1-n}}{n-1}\right)+C&\mathrm{otherwise}
+\end{dcases}
+\\
+\int\frac{mx+n}{ax^2+bx+c}dx&=
+\begin{dcases}
+\frac{m}{2a}\ln|ax^2+bx+c|+\frac{2an-bm}{a\sqrt{4ac-b^2}}\arctan\left(\frac{2ax+b}{\sqrt{4ac-b^2}}\right)+C&\mathrm{for\ }b^2-4ac<0\\
+\frac{m}{2a}\ln|ax^2+bx+c|+\frac{2an-bm}{2a\sqrt{b^2-4ac}}\ln\left|\frac{2ax+b-\sqrt{b^2-4ac}}{2ax+b+\sqrt{b^2-4ac}}\right|+C&\mathrm{for\ }b^2-4ac=0\\
+\frac{m}{2a}\ln|ax^2+bx+c|-\frac{2an-bm}{a(2ax+b)}+C&\mathrm{for\ }b^2-4ac>0
+\end{dcases}
+\end{align}
+
+\end{document}
