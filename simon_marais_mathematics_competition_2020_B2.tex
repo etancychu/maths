@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{geometry}
+
+\newgeometry{vmargin={15mm}, hmargin={12mm,17mm}}
+\setlength{\parindent}{0pt}
+\onehalfspacing
+
+\graphicspath{{C:/Users/user/OneDrive/Desktop/Setup/LaTeX/}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+\begin{document}
+
+For each positive integer $k$, let $S_k$ be the set of real numbers that can be expressed in the form
+$$\frac{1}{n_1}+\frac{1}{n_2}+\dots+\frac{1}{n_k}$$
+where $n_1,n_2,\dots,n_k$ are positive integers.\\
+Prove that $S_k$ does not contain an infinite strictly increasing sequence.\\
+
+\underline{\textbf{Solution}}
+
+We prove by induction on $k$. When $k=1$, the statement is obviously true.\\
+For the sake of contradiction, assume $S_{k-1}$ does not contain an infinite strictly increasing sequence, while $S_k$ does.\\
+Let the infinite strictly increasing sequence be $a_1,a_2,a_3,\dots$.\\
+Let $n_{i,j}$ be such that $a_j=\sum_{i=1}^{k}\frac{1}{n_{i,j}}$ for all $j\in\mathbb{Z}^{+}$, with $n_{i,j}\leq n_{i+1,j}$ for all $1\leq i\leq k-1$ and $j\in\mathbb{Z}^{+}$.
+
+\begin{enumerate}[label=\underline{Claim:}, leftmargin=*]
+\item
+$n_{1,j}$ can only take on finitely many values.
+
+\item[\underline{Proof:}]
+Assume the contrary. Then there exist a $j$ with $n_{1,j}>n_{k,1}$. So $n_{1,1}\leq n_{2,1}\leq\dots\leq n_{k,1}<n_{1,j}\leq n_{2,j}\leq\dots\leq n_{k,j}$.\\
+Therefore $$\frac{1}{n_{1,j}},\frac{1}{n_{2,j}},\dots,\frac{1}{n_{k,j}}<\frac{1}{n_{1,1}},\frac{1}{n_{2,1}},\dots,\frac{1}{n_{k,1}},$$
+which means $a_j<a_1$, contradicting its minimality.
+
+\end{enumerate}
+
+Now we can partition $a_1,a_2,a_3,\dots$ into finitely many strictly increasing sequences based on their value of $n_{1,j}$. For each of them with a fixed $n_{1,j}$, subtracting $\frac{1}{n_{1,j}}$ from each term turns it into a sequence in $S_{k-1}$, and we can conclude each of the strictly increasing sequences are finite from the inductive hypothesis. Therefore $a_1,a_2,a_3,\dots$ is a finite sequence as well and we arrive at a contradiction, proving the statement for all $k\in\mathbb{Z}^{+}$.
+
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{geometry}
+
+\newgeometry{vmargin={15mm}, hmargin={12mm,17mm}}
+\setlength{\parindent}{0pt}
+\onehalfspacing
+
+\graphicspath{{C:/Users/user/OneDrive/Desktop/Setup/LaTeX/}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+\begin{document}
+
+Let $k\geq14$ be an integer, and let $p_k$ be the largest prime number which is strictly less than $k$. You may assume that $p_k\geq3k/4$. Let $n$ be a composite integer. Prove:\\
+(a) if $n=2p_k$, then $n$ does not divide $(n-k)!$;\\
+(b) if $n>2p_k$, then $n$ divides $(n-k)!$.\\
+
+\underline{\textbf{Solution}}
+
+\begin{enumerate}[label=(a), leftmargin=*]
+\item
+$2p_k-k=p_k+(p_k-k)<p_k \implies p_k \nmid (2p_k-k)! \implies n \nmid (n-k)!$.
+\item[(b)]
+
+\begin{enumerate}[label=\underline{Case 1:}, leftmargin=*]
+\item
+$n\geq2k$ and $n$ is not the square of a prime.\\
+We have $\frac{n}{2}\leq n-k$. Write $n=ab$ where $a,b\in\mathbb{Z}_{\geq2}$ with $a\neq b$.\\
+So $a,b\geq2\implies a,b\leq\frac{n}{2}\leq n-k\implies n=ab\mid (n-k)!$.
+
+\item[\underline{Case 2:}]
+$n$ is the square of a prime.\\
+Write $n=q^2$ where $q$ is the prime, so that $q^2>2p_k$. So we have $k-q^2+2q\leq\frac{4}{3}p_k-q^2+2q<-\frac{1}{3}q^2+2q\leq0$ for all $q\geq6$, which must be the case as $k\geq14\implies p_k\geq13\implies n\geq26\implies q\geq6$. Now we have $k-q^2+2q<0\implies n-k>2q\implies n=q^2\mid q\cdot2q\mid(n-k)!$.
+
+\item[\underline{Case 3:}]
+$2p_k<n<2k$ and $n$ is not the square of a prime.\\
+We have $n>2p_k\geq\frac{3}{2}k\implies n-k\geq\frac{n}{3}$. $n$ can be written as $ab$ where $a,b\in\mathbb{Z}_{\geq3}$ with $a\neq b$. Otherwise either $n=2p$ for some prime $p$ or $n=2^t$ for some $t\in\mathbb{Z}^+$. The first is impossible as $2p_k<n<2k<2p_{k+1}$. For the second, as Case 2 we have $n\geq26\implies t\geq5$, so $(a,b)=(4,2^{t-2})$ works. Now we have $a,b\geq3\implies a,b\leq\frac{n}{3}\leq n-k\implies n=ab\mid(n-k)!$.
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
